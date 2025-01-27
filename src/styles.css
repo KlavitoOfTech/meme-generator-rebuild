@@ -58,6 +58,104 @@ main {
     cursor: pointer;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+    margin: 0;
+}
+
+main {
+    padding: 36px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    color: white;
+    padding: 20px;
+}
+
+.header--image {
+    height: 100%;
+    margin-right: 6px;
+}
+
+.header--title {
+    font-size: 1.25rem;
+    margin-right: auto;
+}
+
+.header--project {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.form {
+    display: grid;
+    grid-template: 40px 40px / 1fr 1fr;
+    gap: 17px;
+}
+
+.form--input {
+    font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+}
+
+.form--button {
+    grid-column: 1 / -1;
+    font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.image--container {
+    position: relative; /* Important to contain the absolutely positioned text */
+    width: 100%;
+    height: 100%;
+    max-width: 600px; /* Ensures it doesn't get too large */
+    aspect-ratio: 3 / 2; /* Ensures a consistent aspect ratio */
+    margin: 0 auto;
+    overflow: hidden; /* Prevents overflow of the image or text */
+    text-align: center;
+}
+
 .meme--image {
+    display: block;
     max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image fills the container properly */
+}
+
+.meme--text {
+    position: absolute; /* Absolute positioning inside the container */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the text horizontally */
+    color: white; /* White text color for visibility */
+    font-size: clamp(1.5rem, 4vw, 3rem); /* Responsive font size */
+    font-weight: bold; /* Bold for better emphasis */
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.75); /* Shadow for readability */
+    pointer-events: none; /* Prevents interaction with the text */
+    text-align: center; /* Centers the text content */
+    word-wrap: break-word; /* Breaks words to prevent overflow */
+    padding: 5px 10px; /* Adds padding around the text */
+    max-width: 90%; /* Prevents the text from overflowing the container */
+}
+
+.meme--text.top {
+    top: 5%; /* Places the text near the top of the image */
+}
+
+.meme--text.bottom {
+    bottom: 5%; /* Places the text near the bottom of the image */
 }
