@@ -3,21 +3,56 @@
 }
 
 body {
-    font-family: "Karla", sans-serif;
+    background: linear-gradient(to bottom, #800080, rgba(128, 0, 128, 0)); /* Purple fading to transparent */
     margin: 0;
+    font-family: "Karla", sans-serif;
+    min-height: 100vh; /* Ensure the body takes up full height of the screen */
 }
 
-main {
-    padding: 36px;
+.main {
+    max-width: 1000px; /* Maximum width */
+    width: 90%; /* Ensures responsiveness */
+    margin: clamp(50px, 10vh, 150px) auto; /* Dynamically adjust margin */
+    padding: 0;
+    padding-bottom: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ✅ Mobile Optimization */
+@media (max-width: 768px) {
+    .main {
+        width: 95%;
+        padding: 0;
+        padding-bottom: 3vw;
+        border-radius: 4px;
+        margin: 50px auto;
+    }
+}
+
+/* ✅ Small Phones */
+@media (max-width: 480px) {
+    .main {
+        padding: 0;
+        padding-bottom: 2vw;
+        margin: 30px auto;
+    }
 }
 
 .header {
+    width: 100%;
     display: flex;
     align-items: center;
     height: 65px;
     background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
     color: white;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 .header--image {
@@ -31,8 +66,7 @@ main {
 }
 
 .header--project {
-    font-size: 0.75rem;
-    font-weight: 500;
+    background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
 }
 
 .form {
@@ -54,6 +88,7 @@ main {
     border-radius: 5px;
     background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
     color: white;
+    margin-bottom: 10px;
     border: none;
     cursor: pointer;
 }
@@ -91,8 +126,13 @@ main {
 }
 
 .header--project {
-    font-size: 0.75rem;
-    font-weight: 500;
+    background: linear-gradient(90.41deg, #9b50b6 1.14%, #c461f2 100%);
+    color: white;
+    font-weight: bold;
+    border: 2px solid #6a1b9a;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .form {
@@ -158,4 +198,19 @@ main {
 
 .meme--text.bottom {
     bottom: 5%; /* Places the text near the bottom of the image */
+}
+
+.download {
+    background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.download:hover {
+    background: linear-gradient(90.41deg, #9b50b6 1.14%, #c461f2 100%);
 }
